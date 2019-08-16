@@ -1,13 +1,14 @@
 import * as firebase from "firebase";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBn0TB_zll1ZDf0FziYBSm_omFiwJ-NpYU",
-  authDomain: "dummy-project-3b430.firebaseapp.com",
-  databaseURL: "https://dummy-project-3b430.firebaseio.com",
-  projectId: "dummy-project-3b430",
-  storageBucket: "dummy-project-3b430.appspot.com",
-  messagingSenderId: "88576294897",
-  appId: "1:88576294897:web:a48d7631da9bcfb4"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_PROJECT_ID + ".firebaseapp.com",
+  databaseURL:
+    "https://" + process.env.FIREBASE_PROJECT_ID + ".firebaseapp.com",
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_PROJECT_ID + ".appspot.com",
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
